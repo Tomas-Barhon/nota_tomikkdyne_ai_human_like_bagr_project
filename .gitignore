@@ -1,5 +1,6 @@
 /cache
 /demos
 /LuaUI
-infolog.txt
-_script.txt
+infolog*
+_script*
+loadprogress_cached*
