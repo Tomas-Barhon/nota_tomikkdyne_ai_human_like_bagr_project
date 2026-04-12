@@ -1,0 +1,93 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 88,
+			"width": 180
+		}
+	},
+	"inputs": [],
+	"outputs": [],
+	"properties": {
+		"1fDeOw2qpzj6iAQVRWigmaCQgrVTRuWe": {
+			"height": 94,
+			"title": "store",
+			"width": 159,
+			"x": 690,
+			"y": -73
+		},
+		"jAxQnWIDMgXxY41q2vkopPHr7Zz0dxKM": {
+			"height": 63,
+			"title": "sequence",
+			"width": 174,
+			"x": 412,
+			"y": -19
+		},
+		"zgXeFh4T74Lkh8eimM8A9D80cHSemhn3": {
+			"height": 72,
+			"title": "echo",
+			"width": 137,
+			"x": 711,
+			"y": 59
+		},
+		"zn1ILNZucmRofpQKgdNqVknPhwvhEdTZ": {
+			"height": 90,
+			"title": "core.echo",
+			"width": 184,
+			"x": 689,
+			"y": 123
+		}
+	},
+	"roles": [ {
+		"categories": [],
+		"name": "Role 0"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [],
+			"id": "1fDeOw2qpzj6iAQVRWigmaCQgrVTRuWe",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "windData"
+			}, {
+				"name": "value",
+				"value": "map.Wind()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "zgXeFh4T74Lkh8eimM8A9D80cHSemhn3",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "msg",
+				"value": "windData"
+			}, {
+				"name": "scriptName",
+				"value": "echo"
+			} ],
+			"scriptName": "echo"
+		}, {
+			"children": [],
+			"id": "zn1ILNZucmRofpQKgdNqVknPhwvhEdTZ",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "SpringEcho",
+				"value": "windData"
+			}, {
+				"name": "enabled",
+				"value": "true"
+			}, {
+				"name": "scriptName",
+				"value": "core.echo"
+			} ],
+			"scriptName": "core.echo"
+		} ],
+		"id": "jAxQnWIDMgXxY41q2vkopPHr7Zz0dxKM",
+		"nodeType": "sequence",
+		"parameters": []
+	}
+}

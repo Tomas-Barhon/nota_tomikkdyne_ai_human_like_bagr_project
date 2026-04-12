@@ -1,7 +1,21 @@
-# Trees
+human_like_bagr_project
+====
 
-TBD
+*(not officially released, yet)*
 
-# Sensors
+Trees
+----
 
-TBD
+* MoveAgainstWind
+
+Sensors
+----
+
+* 
+
+* [dependencies](./dependencies.json)
+
+{
+    "core": "0.4.x",
+    "map": "0.4.x"
+}
