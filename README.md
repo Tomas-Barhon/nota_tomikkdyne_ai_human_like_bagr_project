@@ -18,4 +18,5 @@ Sensors
 {
     "core": "0.4.x",
     "map": "0.4.x"
+    "formation": "0.3.x"
 }
