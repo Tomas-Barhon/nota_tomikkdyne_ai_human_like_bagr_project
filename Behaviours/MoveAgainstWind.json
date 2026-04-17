@@ -9,6 +9,13 @@
 	"inputs": [],
 	"outputs": [],
 	"properties": {
+		"4wGkqnj4SrEi4A2AOh0bFhheyC6LAC2Q": {
+			"height": 92,
+			"title": "store",
+			"width": 315,
+			"x": 1215,
+			"y": 296
+		},
 		"7Q1PFf3OMwP9CXSmwyyStQfbwP17it1X": {
 			"height": 60,
 			"title": "behavioral loop",
@@ -20,43 +27,43 @@
 			"height": 205,
 			"title": "formation.moveCustomGroup",
 			"width": 643,
-			"x": 843,
-			"y": 266
+			"x": 938,
+			"y": 391
 		},
 		"K596hsGwMqvQRGiS80bA8T80sTSCdF16": {
 			"height": 70,
 			"title": "parallel",
 			"width": 202,
-			"x": 800,
-			"y": -136
+			"x": 856,
+			"y": -152
 		},
 		"LNCCjyTWkRZzIy4vzDTAncd1vqQS20uV": {
 			"height": 94,
 			"title": "store leader pos",
 			"width": 185,
-			"x": 1458,
-			"y": -387
+			"x": 1514,
+			"y": -403
 		},
 		"R86me5uuOFWlzFrclPFSRiJ0AJORI0nk": {
 			"height": 113,
 			"title": "build formation arguments",
-			"width": 647,
-			"x": 1058,
-			"y": 108
+			"width": 808,
+			"x": 1222,
+			"y": 81
 		},
 		"YO9vQvcxnKnycUPxJA9gjSTYeN4QuNe7": {
 			"height": 70,
 			"title": "sensor leader pos only",
 			"width": 226,
-			"x": 1154,
-			"y": -376
+			"x": 1210,
+			"y": -392
 		},
 		"bFd1fn3ENB7oH3K4bjRFFDXncpunLFSl": {
 			"height": 93,
 			"title": "set distance",
 			"width": 157,
-			"x": 1062,
-			"y": -101
+			"x": 1239,
+			"y": -115
 		},
 		"dOREy4lfhHeuMuLAf3hkqnnOXg8JaQcw": {
 			"height": 60,
@@ -69,22 +76,29 @@
 			"height": 103,
 			"title": "targetPos",
 			"width": 361,
-			"x": 1057,
-			"y": 9
+			"x": 1233,
+			"y": -16
 		},
 		"jgPLG5Q0Sy1HqcIaJhavpCFO3vmaYsTD": {
 			"height": 94,
 			"title": "retrieve wind",
 			"width": 205,
-			"x": 1065,
-			"y": -288
+			"x": 1216,
+			"y": -304
+		},
+		"jo4IRiCKEPFulfo3ogPli2XG5rXt69bZ": {
+			"height": 93,
+			"title": "store formation",
+			"width": 348,
+			"x": 1219,
+			"y": 195
 		},
 		"xtF7hMjpWwT5deISe7WMr3uA35V7zgWh": {
 			"height": 102,
 			"title": "calculate wind vector",
 			"width": 402,
-			"x": 1060,
-			"y": -197
+			"x": 1226,
+			"y": -215
 		},
 		"ykODEnzyAU1S3Aja3hTGikxXdmiC2r0p": {
 			"height": 70,
@@ -166,7 +180,7 @@
 						"value": "distance"
 					}, {
 						"name": "value",
-						"value": "30"
+						"value": "70"
 					}, {
 						"name": "scriptName",
 						"value": "store"
@@ -196,7 +210,37 @@
 						"value": "formationBuildResult"
 					}, {
 						"name": "value",
-						"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords(windVector, 30)"
+						"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords({\"Mawerick\",\"Peewee\",},windVector, 30)"
+					}, {
+						"name": "scriptName",
+						"value": "store"
+					} ],
+					"scriptName": "store"
+				}, {
+					"children": [],
+					"id": "jo4IRiCKEPFulfo3ogPli2XG5rXt69bZ",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "var",
+						"value": "groupFormation"
+					}, {
+						"name": "value",
+						"value": "formationBuildResult.formation"
+					}, {
+						"name": "scriptName",
+						"value": "store"
+					} ],
+					"scriptName": "store"
+				}, {
+					"children": [],
+					"id": "4wGkqnj4SrEi4A2AOh0bFhheyC6LAC2Q",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "var",
+						"value": "groupDef"
+					}, {
+						"name": "value",
+						"value": "formationBuildResult.groupDefinition"
 					}, {
 						"name": "scriptName",
 						"value": "store"
@@ -220,13 +264,13 @@
 				"nodeType": "luaCommand",
 				"parameters": [ {
 					"name": "groupDefintion",
-					"value": "formationBuildResult.groupDefinition"
+					"value": "groupDef"
 				}, {
 					"name": "position",
 					"value": "targetPos"
 				}, {
 					"name": "formation",
-					"value": "formationBuildResult.formation"
+					"value": "groupFormation"
 				}, {
 					"name": "fight",
 					"value": "false"
