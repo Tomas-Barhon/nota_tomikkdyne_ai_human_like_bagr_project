@@ -180,7 +180,7 @@
 						"value": "distance"
 					}, {
 						"name": "value",
-						"value": "70"
+						"value": "1000"
 					}, {
 						"name": "scriptName",
 						"value": "store"
@@ -210,7 +210,7 @@
 						"value": "formationBuildResult"
 					}, {
 						"name": "value",
-						"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords({\"Mawerick\",\"Peewee\",},windVector, 30)"
+						"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords({\"Maverick\",\"Peewee\",},windVector, 30)"
 					}, {
 						"name": "scriptName",
 						"value": "store"
