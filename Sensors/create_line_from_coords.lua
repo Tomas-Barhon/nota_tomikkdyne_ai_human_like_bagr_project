@@ -1,3 +1,4 @@
+
 function getInfo()
 	return {
 		fields = { "formation", "groupDefinition" }
@@ -18,15 +19,17 @@ return function(
 
     local units = SpringGetTeamUnits(myTeamID)
 
-    -- normalize wind
     local length = math.sqrt(wind_vector.x^2 + wind_vector.z^2)
     if length == 0 then length = 1 end
 
-    local dirX = -wind_vector.x / length
-    local dirZ = -wind_vector.z / length
+    -- perpendicular direction
+    local dirX = -wind_vector.z / length
+    local dirZ = wind_vector.x / length
 
+    -- formation index
     local index = 1
 
+    -- membership lookup
     local nameLookup = {}
     for _, name in ipairs(unit_names) do
         nameLookup[name] = true
@@ -54,11 +57,13 @@ return function(
         local unitList = unitsByName[name]
         if unitList then
             for _, unit_id in ipairs(unitList) do
+                -- Preserve per-name insertion order as found in team units iteration.
                 orderedUnits[#orderedUnits + 1] = unit_id
             end
         end
     end
 
+    Spring.Echo(orderedUnits)
     for _, unit_id in ipairs(orderedUnits) do
         local offset = 0
         if index > 1 then
@@ -77,6 +82,7 @@ return function(
         index = index + 1
     end
 
+    -- Return both tables expected by getInfo().
     return {
         formation = formation,
         groupDefinition = groupDefinition,

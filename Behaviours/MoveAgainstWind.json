@@ -180,7 +180,7 @@
 						"value": "distance"
 					}, {
 						"name": "value",
-						"value": "1000"
+						"value": "30"
 					}, {
 						"name": "scriptName",
 						"value": "store"
