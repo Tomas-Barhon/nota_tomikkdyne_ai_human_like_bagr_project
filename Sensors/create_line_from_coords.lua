@@ -5,66 +5,22 @@ function getInfo()
 	}
 end
 
-local SpringGetTeamUnits = Spring.GetTeamUnits
-local SpringGetUnitDefID = Spring.GetUnitDefID
-local myTeamID = Spring.GetMyTeamID()
 
 return function(
-    unit_names,
     wind_vector,
     spacing
 )
+
     local formation = {}
     local groupDefinition = {}
 
-    local units = SpringGetTeamUnits(myTeamID)
-
-    local length = math.sqrt(wind_vector.x^2 + wind_vector.z^2)
-    if length == 0 then length = 1 end
-
     -- perpendicular direction
-    local dirX = -wind_vector.z / length
-    local dirZ = wind_vector.x / length
+    local dirX = -wind_vector.z
+    local dirZ = wind_vector.x
 
-    -- formation index
     local index = 1
 
-    -- membership lookup
-    local nameLookup = {}
-    for _, name in ipairs(unit_names) do
-        nameLookup[name] = true
-    end
-
-    local unitsByName = {}
     for _, unit_id in ipairs(units) do
-        local defID = SpringGetUnitDefID(unit_id)
-
-        if defID then
-            local def = UnitDefs[defID]
-
-            if def and nameLookup[def.humanName] and def.canMove then
-                if not unitsByName[def.humanName] then
-                    unitsByName[def.humanName] = {}
-                end
-
-                unitsByName[def.humanName][#unitsByName[def.humanName] + 1] = unit_id
-            end
-        end
-    end
-
-    local orderedUnits = {}
-    for _, name in ipairs(unit_names) do
-        local unitList = unitsByName[name]
-        if unitList then
-            for _, unit_id in ipairs(unitList) do
-                -- Preserve per-name insertion order as found in team units iteration.
-                orderedUnits[#orderedUnits + 1] = unit_id
-            end
-        end
-    end
-
-    Spring.Echo(orderedUnits)
-    for _, unit_id in ipairs(orderedUnits) do
         local offset = 0
         if index > 1 then
             local sideStep = math.ceil((index - 1) / 2)
@@ -82,7 +38,6 @@ return function(
         index = index + 1
     end
 
-    -- Return both tables expected by getInfo().
     return {
         formation = formation,
         groupDefinition = groupDefinition,
