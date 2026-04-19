@@ -16,26 +16,12 @@
 			"x": 599,
 			"y": 144
 		},
-		"JZu6L8RQSZeC3FunQSUIZ904BwkFTmbq": {
-			"height": 205,
-			"title": "leader group",
-			"width": 643,
-			"x": 1158,
-			"y": 347
-		},
 		"K596hsGwMqvQRGiS80bA8T80sTSCdF16": {
 			"height": 70,
 			"title": "parallel",
 			"width": 202,
 			"x": 856,
 			"y": -152
-		},
-		"KNUCBOEqiqoeEBNHbDFGJ94M42GtknYA": {
-			"height": 104,
-			"title": "build formation soldiers",
-			"width": 797,
-			"x": 1816,
-			"y": 182
 		},
 		"LNCCjyTWkRZzIy4vzDTAncd1vqQS20uV": {
 			"height": 94,
@@ -44,19 +30,12 @@
 			"x": 1514,
 			"y": -403
 		},
-		"QKMvrRCLdsu3c9TXWSMfVqF34p3jJUz2": {
-			"height": 70,
-			"title": "build formation per role",
-			"width": 228,
-			"x": 1374,
-			"y": 97
-		},
 		"R86me5uuOFWlzFrclPFSRiJ0AJORI0nk": {
 			"height": 113,
-			"title": "build formation leader",
-			"width": 808,
-			"x": 1815,
-			"y": 68
+			"title": "build formation",
+			"width": 1243,
+			"x": 1223,
+			"y": 137
 		},
 		"YO9vQvcxnKnycUPxJA9gjSTYeN4QuNe7": {
 			"height": 70,
@@ -83,8 +62,8 @@
 			"height": 139,
 			"title": "soldiers group",
 			"width": 642,
-			"x": 1161,
-			"y": 543
+			"x": 1080,
+			"y": 341
 		},
 		"gauSGDihioSEDs2u2UveQeYErwJRqPGu": {
 			"height": 103,
@@ -92,13 +71,6 @@
 			"width": 361,
 			"x": 1233,
 			"y": -16
-		},
-		"i6C1iQ7NK5D6tnoe3ShJOsUPyUWT9E1B": {
-			"height": 70,
-			"title": "Splitformation",
-			"width": 202,
-			"x": 847,
-			"y": 218
 		},
 		"jgPLG5Q0Sy1HqcIaJhavpCFO3vmaYsTD": {
 			"height": 94,
@@ -216,43 +188,20 @@
 					} ],
 					"scriptName": "store"
 				}, {
-					"children": [ {
-						"children": [],
-						"id": "R86me5uuOFWlzFrclPFSRiJ0AJORI0nk",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "var",
-							"value": "formationLeaderResult"
-						}, {
-							"name": "value",
-							"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords(windVector, 30)"
-						}, {
-							"name": "scriptName",
-							"value": "store"
-						} ],
-						"scriptName": "store"
-					}, {
-						"children": [],
-						"id": "KNUCBOEqiqoeEBNHbDFGJ94M42GtknYA",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "var",
-							"value": "formationSoldiersResult"
-						}, {
-							"name": "value",
-							"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords(windVector, 30)"
-						}, {
-							"name": "scriptName",
-							"value": "store"
-						} ],
-						"scriptName": "store"
-					} ],
-					"id": "QKMvrRCLdsu3c9TXWSMfVqF34p3jJUz2",
-					"nodeType": "roleSplit",
+					"children": [],
+					"id": "R86me5uuOFWlzFrclPFSRiJ0AJORI0nk",
+					"nodeType": "luaCommand",
 					"parameters": [ {
-						"name": "mode",
-						"value": "all-success"
-					} ]
+						"name": "var",
+						"value": "formationResult"
+					}, {
+						"name": "value",
+						"value": "nota_tomikkdyne_ai_human_like_bagr_project.create_line_from_coords(windVector, 30, \"Maverick\")"
+					}, {
+						"name": "scriptName",
+						"value": "store"
+					} ],
+					"scriptName": "store"
 				} ],
 				"id": "K596hsGwMqvQRGiS80bA8T80sTSCdF16",
 				"nodeType": "parallel",
@@ -266,55 +215,26 @@
 			"parameters": []
 		}, {
 			"children": [ {
-				"children": [ {
-					"children": [],
-					"id": "JZu6L8RQSZeC3FunQSUIZ904BwkFTmbq",
-					"nodeType": "luaCommand",
-					"parameters": [ {
-						"name": "groupDefintion",
-						"value": "formationLeaderResult.groupDefinition"
-					}, {
-						"name": "position",
-						"value": "targetPos"
-					}, {
-						"name": "formation",
-						"value": "formationLeaderResult.formation"
-					}, {
-						"name": "fight",
-						"value": "false"
-					}, {
-						"name": "scriptName",
-						"value": "formation.moveCustomGroup"
-					} ],
-					"scriptName": "formation.moveCustomGroup"
-				}, {
-					"children": [],
-					"id": "eamFLQU0yShnfuR0x7b9EGlqtC4ewTAP",
-					"nodeType": "luaCommand",
-					"parameters": [ {
-						"name": "groupDefintion",
-						"value": "formationSoldiersResult.groupDefinition"
-					}, {
-						"name": "position",
-						"value": "targetPos"
-					}, {
-						"name": "formation",
-						"value": "formationSoldiersResult.formation"
-					}, {
-						"name": "fight",
-						"value": "false"
-					}, {
-						"name": "scriptName",
-						"value": "formation.moveCustomGroup"
-					} ],
-					"scriptName": "formation.moveCustomGroup"
-				} ],
-				"id": "i6C1iQ7NK5D6tnoe3ShJOsUPyUWT9E1B",
-				"nodeType": "roleSplit",
+				"children": [],
+				"id": "eamFLQU0yShnfuR0x7b9EGlqtC4ewTAP",
+				"nodeType": "luaCommand",
 				"parameters": [ {
-					"name": "mode",
-					"value": "all-success"
-				} ]
+					"name": "groupDefintion",
+					"value": "formationResult.groupDefinition"
+				}, {
+					"name": "position",
+					"value": "targetPos"
+				}, {
+					"name": "formation",
+					"value": "formationResult.formation"
+				}, {
+					"name": "fight",
+					"value": "false"
+				}, {
+					"name": "scriptName",
+					"value": "formation.moveCustomGroup"
+				} ],
+				"scriptName": "formation.moveCustomGroup"
 			} ],
 			"id": "7Q1PFf3OMwP9CXSmwyyStQfbwP17it1X",
 			"nodeType": "repeat",

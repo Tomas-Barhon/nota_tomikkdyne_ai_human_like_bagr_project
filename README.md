@@ -11,9 +11,7 @@ Trees
 Sensors
 ----
 
-* 
-
-* [dependencies](./dependencies.json)
+* create_line_from_coords
 
 {
     "core": "0.4.x",
