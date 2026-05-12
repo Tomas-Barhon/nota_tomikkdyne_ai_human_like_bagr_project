@@ -9,33 +9,19 @@
 	"inputs": [],
 	"outputs": [],
 	"properties": {
-		"0MCwvkotmTEVWqLORwhKEO3Bget3BWU1": {
-			"height": 54,
-			"title": "success",
-			"width": 132,
-			"x": 459,
-			"y": -55
+		"5i4cKWyqjJZMACUqEjHBGUQoqwhBkcqM": {
+			"height": 90,
+			"title": "core.echo",
+			"width": 350,
+			"x": 542,
+			"y": -97
 		},
-		"3980HSxEyK0M6NGUqb6KWjFQkb7jA0c5": {
+		"KaXqdWVorxevbupctmkEZG6Zlni0i5C3": {
 			"height": 70,
-			"title": "selector",
-			"width": 131,
-			"x": 250,
-			"y": 12
-		},
-		"9L5wZvPUau7fVNuTHo2dZjjU9EfmWTnd": {
-			"height": 54,
-			"title": "failure",
-			"width": 131,
-			"x": 464,
-			"y": 113
-		},
-		"rMgpzMfp222dfTUOspqw4UGxujJLC6kx": {
-			"height": 72,
-			"title": "wait",
-			"width": 131,
-			"x": 451,
-			"y": 25
+			"title": "parallel",
+			"width": 202,
+			"x": 259,
+			"y": -28
 		}
 	},
 	"roles": [ {
@@ -45,28 +31,25 @@
 	"root": {
 		"children": [ {
 			"children": [],
-			"id": "0MCwvkotmTEVWqLORwhKEO3Bget3BWU1",
-			"nodeType": "success",
-			"parameters": []
-		}, {
-			"children": [],
-			"id": "rMgpzMfp222dfTUOspqw4UGxujJLC6kx",
-			"nodeType": "wait",
+			"id": "5i4cKWyqjJZMACUqEjHBGUQoqwhBkcqM",
+			"nodeType": "luaCommand",
 			"parameters": [ {
-				"name": "time",
-				"value": 3
-			} ]
-		}, {
-			"children": [],
-			"id": "9L5wZvPUau7fVNuTHo2dZjjU9EfmWTnd",
-			"nodeType": "failure",
-			"parameters": []
+				"name": "SpringEcho",
+				"value": "Game.mapSizeZ/Game.squareSize"
+			}, {
+				"name": "enabled",
+				"value": "true"
+			}, {
+				"name": "scriptName",
+				"value": "core.echo"
+			} ],
+			"scriptName": "core.echo"
 		} ],
-		"id": "3980HSxEyK0M6NGUqb6KWjFQkb7jA0c5",
-		"nodeType": "selector",
+		"id": "KaXqdWVorxevbupctmkEZG6Zlni0i5C3",
+		"nodeType": "parallel",
 		"parameters": [ {
-			"name": "active",
-			"value": "true"
+			"name": "mode",
+			"value": "all-success"
 		} ]
 	}
 }

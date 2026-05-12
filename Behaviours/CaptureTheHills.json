@@ -8,9 +8,48 @@
 	},
 	"inputs": [],
 	"outputs": [],
-	"properties": [],
+	"properties": {
+		"73kptDT5Cmktxr9gkLD59533ifxm2sSW": {
+			"height": 94,
+			"title": "store",
+			"width": 602,
+			"x": 496,
+			"y": -128
+		},
+		"fK8EC78EHi64Zmt7KhHVJIsTPfEVTaz8": {
+			"height": 70,
+			"title": "parallel",
+			"width": 202,
+			"x": 269,
+			"y": -20
+		}
+	},
 	"roles": [ {
 		"categories": [],
 		"name": "Role 0"
-	} ]
+	} ],
+	"root": {
+		"children": [ {
+			"children": [],
+			"id": "73kptDT5Cmktxr9gkLD59533ifxm2sSW",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "x"
+			}, {
+				"name": "value",
+				"value": "nota_tomikkdyne_ai_human_like_bagr_project.detect_hills(130,10, 5, 700, 0.5)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		} ],
+		"id": "fK8EC78EHi64Zmt7KhHVJIsTPfEVTaz8",
+		"nodeType": "parallel",
+		"parameters": [ {
+			"name": "mode",
+			"value": "all-success"
+		} ]
+	}
 }
