@@ -1,0 +1,72 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 88,
+			"width": 180
+		}
+	},
+	"inputs": [],
+	"outputs": [],
+	"properties": {
+		"0MCwvkotmTEVWqLORwhKEO3Bget3BWU1": {
+			"height": 54,
+			"title": "success",
+			"width": 132,
+			"x": 459,
+			"y": -55
+		},
+		"3980HSxEyK0M6NGUqb6KWjFQkb7jA0c5": {
+			"height": 70,
+			"title": "selector",
+			"width": 131,
+			"x": 250,
+			"y": 12
+		},
+		"9L5wZvPUau7fVNuTHo2dZjjU9EfmWTnd": {
+			"height": 54,
+			"title": "failure",
+			"width": 131,
+			"x": 464,
+			"y": 113
+		},
+		"rMgpzMfp222dfTUOspqw4UGxujJLC6kx": {
+			"height": 72,
+			"title": "wait",
+			"width": 131,
+			"x": 451,
+			"y": 25
+		}
+	},
+	"roles": [ {
+		"categories": [],
+		"name": "Role 0"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [],
+			"id": "0MCwvkotmTEVWqLORwhKEO3Bget3BWU1",
+			"nodeType": "success",
+			"parameters": []
+		}, {
+			"children": [],
+			"id": "rMgpzMfp222dfTUOspqw4UGxujJLC6kx",
+			"nodeType": "wait",
+			"parameters": [ {
+				"name": "time",
+				"value": 3
+			} ]
+		}, {
+			"children": [],
+			"id": "9L5wZvPUau7fVNuTHo2dZjjU9EfmWTnd",
+			"nodeType": "failure",
+			"parameters": []
+		} ],
+		"id": "3980HSxEyK0M6NGUqb6KWjFQkb7jA0c5",
+		"nodeType": "selector",
+		"parameters": [ {
+			"name": "active",
+			"value": "true"
+		} ]
+	}
+}
