@@ -19,7 +19,7 @@
 		"73kptDT5Cmktxr9gkLD59533ifxm2sSW": {
 			"height": 94,
 			"title": "store hill locations",
-			"width": 615,
+			"width": 623,
 			"x": 1059,
 			"y": -186
 		},
@@ -104,7 +104,7 @@
 						"value": "hill_locations"
 					}, {
 						"name": "value",
-						"value": "nota_tomikkdyne_ai_human_like_bagr_project.detect_hills(130,10, 5, 700, 0.5,true)"
+						"value": "nota_tomikkdyne_ai_human_like_bagr_project.detect_hills(192,5,700,true)"
 					}, {
 						"name": "scriptName",
 						"value": "store"
