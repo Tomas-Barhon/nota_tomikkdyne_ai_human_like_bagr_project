@@ -2,26 +2,75 @@
 	"additionalNodes": [],
 	"additionalParameters": {
 		"root": {
-			"height": 88,
-			"width": 180
+			"height": 108,
+			"width": 216
 		}
 	},
 	"inputs": [],
 	"outputs": [],
 	"properties": {
+		"03mBdvpgVS4mjO9JC6q3bX1pWivrkDrC": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 833,
+			"y": -149
+		},
 		"73kptDT5Cmktxr9gkLD59533ifxm2sSW": {
 			"height": 94,
-			"title": "store",
-			"width": 602,
-			"x": 496,
-			"y": -128
+			"title": "store hill locations",
+			"width": 615,
+			"x": 1059,
+			"y": -186
 		},
-		"fK8EC78EHi64Zmt7KhHVJIsTPfEVTaz8": {
+		"7IhG8nHp9b4WPV8ShwYmz7iPbxQrQ2A9": {
+			"height": 92,
+			"title": "set first run",
+			"width": 180,
+			"x": 553,
+			"y": -186
+		},
+		"E2S5zdiASwQkcYW0Xkisme9pdP6M8wv2": {
+			"height": 92,
+			"title": "change for other runs",
+			"width": 218,
+			"x": 1064,
+			"y": -97
+		},
+		"Pl0ZRfbk2SCKp67bRPKzExTR0x3IUQQO": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 300,
+			"y": 17
+		},
+		"WT88ngcF5XiKK9SP9ht8YXSYeL5wIRno": {
 			"height": 70,
 			"title": "parallel",
 			"width": 202,
-			"x": 269,
-			"y": -20
+			"x": 863,
+			"y": 78
+		},
+		"Wu8nnM7I0yab3PF9DaA6qTwSlXOsi1WH": {
+			"height": 54,
+			"title": "failure",
+			"width": 131,
+			"x": 792,
+			"y": -28
+		},
+		"ncxQ8CqDpsUeDLdbxtJgHIHjvmh8Xm2k": {
+			"height": 94,
+			"title": "store",
+			"width": 198,
+			"x": 1264,
+			"y": 20
+		},
+		"r6HX2uJZlLKMoPKBK8nioNyFuRQdyy3X": {
+			"height": 90,
+			"title": "find hills on startup",
+			"width": 201,
+			"x": 542,
+			"y": -73
 		}
 	},
 	"roles": [ {
@@ -31,25 +80,96 @@
 	"root": {
 		"children": [ {
 			"children": [],
-			"id": "73kptDT5Cmktxr9gkLD59533ifxm2sSW",
+			"id": "7IhG8nHp9b4WPV8ShwYmz7iPbxQrQ2A9",
 			"nodeType": "luaCommand",
 			"parameters": [ {
 				"name": "var",
-				"value": "x"
+				"value": "first_run"
 			}, {
 				"name": "value",
-				"value": "nota_tomikkdyne_ai_human_like_bagr_project.detect_hills(130,10, 5, 700, 0.5)"
+				"value": "true"
 			}, {
 				"name": "scriptName",
 				"value": "store"
 			} ],
 			"scriptName": "store"
+		}, {
+			"children": [ {
+				"children": [ {
+					"children": [],
+					"id": "73kptDT5Cmktxr9gkLD59533ifxm2sSW",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "var",
+						"value": "hill_locations"
+					}, {
+						"name": "value",
+						"value": "nota_tomikkdyne_ai_human_like_bagr_project.detect_hills(130,10, 5, 700, 0.5,true)"
+					}, {
+						"name": "scriptName",
+						"value": "store"
+					} ],
+					"scriptName": "store"
+				}, {
+					"children": [],
+					"id": "E2S5zdiASwQkcYW0Xkisme9pdP6M8wv2",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "var",
+						"value": "first_run"
+					}, {
+						"name": "value",
+						"value": "false"
+					}, {
+						"name": "scriptName",
+						"value": "store"
+					} ],
+					"scriptName": "store"
+				} ],
+				"id": "03mBdvpgVS4mjO9JC6q3bX1pWivrkDrC",
+				"nodeType": "sequence",
+				"parameters": []
+			}, {
+				"children": [],
+				"id": "Wu8nnM7I0yab3PF9DaA6qTwSlXOsi1WH",
+				"nodeType": "failure",
+				"parameters": []
+			} ],
+			"id": "r6HX2uJZlLKMoPKBK8nioNyFuRQdyy3X",
+			"nodeType": "luaCondition",
+			"parameters": [ {
+				"name": "expression",
+				"value": "first_run"
+			}, {
+				"name": "repeat",
+				"value": "false"
+			} ]
+		}, {
+			"children": [ {
+				"children": [],
+				"id": "ncxQ8CqDpsUeDLdbxtJgHIHjvmh8Xm2k",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "var",
+					"value": "info"
+				}, {
+					"name": "value",
+					"value": "core.MissionInfo()"
+				}, {
+					"name": "scriptName",
+					"value": "store"
+				} ],
+				"scriptName": "store"
+			} ],
+			"id": "WT88ngcF5XiKK9SP9ht8YXSYeL5wIRno",
+			"nodeType": "parallel",
+			"parameters": [ {
+				"name": "mode",
+				"value": "all-success"
+			} ]
 		} ],
-		"id": "fK8EC78EHi64Zmt7KhHVJIsTPfEVTaz8",
-		"nodeType": "parallel",
-		"parameters": [ {
-			"name": "mode",
-			"value": "all-success"
-		} ]
+		"id": "Pl0ZRfbk2SCKp67bRPKzExTR0x3IUQQO",
+		"nodeType": "sequence",
+		"parameters": []
 	}
 }

@@ -6,6 +6,7 @@ local sensorInfo = {
 	license = "notAlicense",
 }
 
+--TODO figure so that it gets cached
 local EVAL_PERIOD_DEFAULT = 0
 
 function getInfo()

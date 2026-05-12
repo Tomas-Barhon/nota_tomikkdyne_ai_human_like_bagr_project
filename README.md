@@ -7,11 +7,14 @@ Trees
 ----
 
 * MoveAgainstWind
+* CaptureTheHills
 
 Sensors
 ----
 
 * create_line_from_coords
+* detect_hills
+* locate_enemy_from_mission
 
 {
     "core": "0.4.x",
