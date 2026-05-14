@@ -6,7 +6,7 @@ local sensorInfo = {
     license = "notAlicense"
 }
 
-local EVAL_PERIOD_DEFAULT = 0
+local EVAL_PERIOD_DEFAULT = math.huge
 
 function getInfo() return {fields = {"hills_coords"}} end
 
@@ -19,7 +19,7 @@ local function buildScanPoints(offset)
     local points = {}
     for x = 0, mapDimsX - 1, offset do
         for z = 0, mapDimsZ - 1, offset do
-            points[#points + 1] = {x = x * squareSize, z = z * squareSize}
+            points[#points + 1] = Vec3(x * squareSize, 0, z * squareSize)
         end
     end
     return points
@@ -30,16 +30,17 @@ local function prune_close_points(points, min_distance)
     min_distance = tonumber(min_distance) or 0
 
     local candidates = {}
+    --add height to each point for sorting
     for _, point in ipairs(points) do
         candidates[#candidates + 1] = {
             x = point.x,
             z = point.z,
-            height = Spring.GetGroundHeight(point.x, point.z)
+            y = Spring.GetGroundHeight(point.x, point.z)
         }
     end
 
     table.sort(candidates,
-               function(left, right) return left.height > right.height end)
+               function(left, right) return left.y > right.y end)
 
     local pruned = {}
     for _, candidate in ipairs(candidates) do
@@ -55,7 +56,7 @@ local function prune_close_points(points, min_distance)
         end
 
         if keep then
-            pruned[#pruned + 1] = {x = candidate.x, z = candidate.z}
+            pruned[#pruned + 1] = Vec3(candidate.x, candidate.y, candidate.z)
         end
     end
 
@@ -70,15 +71,14 @@ return function(hill_threshold, smoke_grid_offset, prunning_dist, debug)
         local x, z = coord.x, coord.z
         local height = Spring.GetGroundHeight(x, z)
         if height >= hill_threshold then
-            hills[#hills + 1] = {x = x, z = z}
+            hills[#hills + 1] = Vec3(x, height, z)
         end
     end
     hills = prune_close_points(hills, prunning_dist)
     for _, hill in ipairs(hills) do
         if debug then
-            Spring.MarkerAddPoint(hill.x, Spring.GetGroundHeight(hill.x, hill.z), hill.z,
-                                  "Hill")
+            Spring.MarkerAddPoint(hill.x, hill.y, hill.z, "Hill")
         end
     end
-    return {hills_coords = hills}
+    return hills
 end
