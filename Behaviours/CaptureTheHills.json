@@ -96,7 +96,7 @@
 		"73kptDT5Cmktxr9gkLD59533ifxm2sSW": {
 			"height": 94,
 			"title": "store hill locations",
-			"width": 632,
+			"width": 640,
 			"x": 870,
 			"y": -349
 		},
@@ -111,8 +111,8 @@
 			"height": 92,
 			"title": "nota_kahlan_ctp2.moveUnitTo",
 			"width": 292,
-			"x": 2575,
-			"y": 176
+			"x": 2821,
+			"y": 113
 		},
 		"AySsLdNr6L5Nca9R2Z2EzYr2LTxns4eP": {
 			"height": 54,
@@ -167,8 +167,8 @@
 			"height": 54,
 			"title": "nota_common.manualMissionEnd",
 			"width": 296,
-			"x": 2270,
-			"y": 569
+			"x": 2186,
+			"y": 488
 		},
 		"K8lBD6DPwkkjrenW1zMqHLM4DwUEedjK": {
 			"height": 94,
@@ -226,6 +226,13 @@
 			"x": 3756,
 			"y": 253
 		},
+		"PdA2TC93lEp6yLsD7DEjMPk7FIBSnVKG": {
+			"height": 70,
+			"title": "parallel",
+			"width": 202,
+			"x": 2156,
+			"y": 376
+		},
 		"QMdMi0RyvTw2gWvk0hMTgMCGGMJ6YTKc": {
 			"height": 92,
 			"title": "nota_tomikkdyne_ai_human_like_bagr_project.unload_units_my_position",
@@ -237,15 +244,15 @@
 			"height": 70,
 			"title": "execute capturing",
 			"width": 202,
-			"x": 2174,
-			"y": 362
+			"x": 2420,
+			"y": 299
 		},
 		"RGlNb7J4BrOYaomXYUv8sIeFr563gVjF": {
 			"height": 92,
 			"title": "nota_kahlan_ctp2.moveUnitTo",
 			"width": 292,
-			"x": 2590,
-			"y": 372
+			"x": 2836,
+			"y": 309
 		},
 		"SSWnYkHiTSkhu49KSSFADoRqG0vS3tkV": {
 			"height": 70,
@@ -258,8 +265,8 @@
 			"height": 92,
 			"title": "nota_kahlan_ctp2.moveUnitTo",
 			"width": 292,
-			"x": 2591,
-			"y": 271
+			"x": 2837,
+			"y": 208
 		},
 		"dsjhxxRr2XlsOKaVZ01oMsgJ2kmyx6PV": {
 			"height": 90,
@@ -272,8 +279,8 @@
 			"height": 92,
 			"title": "nota_kahlan_ctp2.moveUnitTo",
 			"width": 292,
-			"x": 2588,
-			"y": 469
+			"x": 2834,
+			"y": 406
 		},
 		"gsrhJ80snR2eXGTrNE1ylcf3Ph9qCxcO": {
 			"height": 70,
@@ -283,11 +290,11 @@
 			"y": 9
 		},
 		"mx7AoeV0omsvHHH6ZBRuB74aXVT1aH47": {
-			"height": 70,
+			"height": 68,
 			"title": "condition",
 			"width": 138,
-			"x": 1929,
-			"y": 365
+			"x": 1959,
+			"y": 413
 		},
 		"ppQNUELlHffpFAAt3j2todurJhkPSqoO": {
 			"height": 54,
@@ -316,6 +323,13 @@
 			"width": 198,
 			"x": 873,
 			"y": -440
+		},
+		"yOFNbNX75Y4Cs2TzcIlbaeV6Aaw4lJq5": {
+			"height": 90,
+			"title": "luaCondition",
+			"width": 221,
+			"x": 2415,
+			"y": 387
 		},
 		"zLzWZ2QBopXILCWn8fw2pbJa7AtwaFKu": {
 			"height": 70,
@@ -681,71 +695,90 @@
 					}, {
 						"children": [ {
 							"children": [ {
-								"children": [],
-								"id": "9R0ik4eaKloWj6Bw1w5vGSINLLWGCNmz",
-								"nodeType": "luaCommand",
-								"parameters": [ {
-									"name": "position",
-									"value": "hill_locations[1]"
+								"children": [ {
+									"children": [],
+									"id": "9R0ik4eaKloWj6Bw1w5vGSINLLWGCNmz",
+									"nodeType": "luaCommand",
+									"parameters": [ {
+										"name": "position",
+										"value": "hill_locations[1]"
+									}, {
+										"name": "unit",
+										"value": "units[1]"
+									}, {
+										"name": "scriptName",
+										"value": "nota_kahlan_ctp2.moveUnitTo"
+									} ],
+									"scriptName": "nota_kahlan_ctp2.moveUnitTo"
 								}, {
-									"name": "unit",
-									"value": "units[1]"
+									"children": [],
+									"id": "ZkUYZV7gPlbM50MbxgAIQghD6sBNM1I4",
+									"nodeType": "luaCommand",
+									"parameters": [ {
+										"name": "position",
+										"value": "hill_locations[2]"
+									}, {
+										"name": "unit",
+										"value": "units[2]"
+									}, {
+										"name": "scriptName",
+										"value": "nota_kahlan_ctp2.moveUnitTo"
+									} ],
+									"scriptName": "nota_kahlan_ctp2.moveUnitTo"
 								}, {
-									"name": "scriptName",
-									"value": "nota_kahlan_ctp2.moveUnitTo"
+									"children": [],
+									"id": "RGlNb7J4BrOYaomXYUv8sIeFr563gVjF",
+									"nodeType": "luaCommand",
+									"parameters": [ {
+										"name": "position",
+										"value": "hill_locations[3]"
+									}, {
+										"name": "unit",
+										"value": "units[3]"
+									}, {
+										"name": "scriptName",
+										"value": "nota_kahlan_ctp2.moveUnitTo"
+									} ],
+									"scriptName": "nota_kahlan_ctp2.moveUnitTo"
+								}, {
+									"children": [],
+									"id": "gMoKHnqjiTDC7qiuqJNbl3czI1PR3oVb",
+									"nodeType": "luaCommand",
+									"parameters": [ {
+										"name": "position",
+										"value": "hill_locations[4]"
+									}, {
+										"name": "unit",
+										"value": "units[4]"
+									}, {
+										"name": "scriptName",
+										"value": "nota_kahlan_ctp2.moveUnitTo"
+									} ],
+									"scriptName": "nota_kahlan_ctp2.moveUnitTo"
 								} ],
-								"scriptName": "nota_kahlan_ctp2.moveUnitTo"
+								"id": "QsvU7RbRmqtvA2y9VzyXIN6l6N2fH1H3",
+								"nodeType": "parallel",
+								"parameters": [ {
+									"name": "mode",
+									"value": "all-success"
+								} ]
 							}, {
 								"children": [],
-								"id": "ZkUYZV7gPlbM50MbxgAIQghD6sBNM1I4",
-								"nodeType": "luaCommand",
+								"id": "yOFNbNX75Y4Cs2TzcIlbaeV6Aaw4lJq5",
+								"nodeType": "luaCondition",
 								"parameters": [ {
-									"name": "position",
-									"value": "hill_locations[2]"
+									"name": "expression",
+									"value": "core.MissionInfo().score>90"
 								}, {
-									"name": "unit",
-									"value": "units[2]"
-								}, {
-									"name": "scriptName",
-									"value": "nota_kahlan_ctp2.moveUnitTo"
-								} ],
-								"scriptName": "nota_kahlan_ctp2.moveUnitTo"
-							}, {
-								"children": [],
-								"id": "RGlNb7J4BrOYaomXYUv8sIeFr563gVjF",
-								"nodeType": "luaCommand",
-								"parameters": [ {
-									"name": "position",
-									"value": "hill_locations[3]"
-								}, {
-									"name": "unit",
-									"value": "units[3]"
-								}, {
-									"name": "scriptName",
-									"value": "nota_kahlan_ctp2.moveUnitTo"
-								} ],
-								"scriptName": "nota_kahlan_ctp2.moveUnitTo"
-							}, {
-								"children": [],
-								"id": "gMoKHnqjiTDC7qiuqJNbl3czI1PR3oVb",
-								"nodeType": "luaCommand",
-								"parameters": [ {
-									"name": "position",
-									"value": "hill_locations[4]"
-								}, {
-									"name": "unit",
-									"value": "units[4]"
-								}, {
-									"name": "scriptName",
-									"value": "nota_kahlan_ctp2.moveUnitTo"
-								} ],
-								"scriptName": "nota_kahlan_ctp2.moveUnitTo"
+									"name": "repeat",
+									"value": "true"
+								} ]
 							} ],
-							"id": "QsvU7RbRmqtvA2y9VzyXIN6l6N2fH1H3",
+							"id": "PdA2TC93lEp6yLsD7DEjMPk7FIBSnVKG",
 							"nodeType": "parallel",
 							"parameters": [ {
 								"name": "mode",
-								"value": "all-success"
+								"value": "any-success"
 							} ]
 						}, {
 							"children": [],
